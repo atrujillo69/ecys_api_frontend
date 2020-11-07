@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  //constructor(private dataApi: DataApiService) {}
-  ngOnInit() {
-    this.getListBooks();
+
+  constructor() { }
+
+  ngOnInit(): void {
   }
 
-  getListBooks() {
-   // this.dataApi.getAllBooks.subscribe(books => console.log(books)) 
-  }}
+}

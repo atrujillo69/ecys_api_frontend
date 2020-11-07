@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   constructor() { }
-  public app_name= "SISTEMA DE CALIFICACION PARA DOCENTES DE LA USAC" 
+
   ngOnInit(): void {
   }
 

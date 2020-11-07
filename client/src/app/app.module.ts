@@ -6,15 +6,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { DetailsComponent } from './components/details/details.component';
+import { ListComponent } from './components/adming/list/list.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { Page404Component } from './components/page404/page404.component';
-import {FormsModule} from "@angular/forms";
- //services
-import { DataApiService } from './services/data-api.service';
-import {HttpClientModule} from '@angular/common/http';
-import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -22,6 +19,8 @@ import { from } from 'rxjs';
     HomeComponent,
     NavbarComponent,
     HeroComponent,
+    DetailsComponent,
+    ListComponent,
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
@@ -31,7 +30,7 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [DataApiService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
