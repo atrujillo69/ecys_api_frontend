@@ -10,10 +10,12 @@ import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { Page404Component } from './components/page404/page404.component';
-
+import {FormsModule} from "@angular/forms";
  //services
 import { DataApiService } from './services/data-api.service';
 import {HttpClientModule} from '@angular/common/http';
+import { from } from 'rxjs';
+
 @NgModule({
   declarations: [
     AppComponent,
