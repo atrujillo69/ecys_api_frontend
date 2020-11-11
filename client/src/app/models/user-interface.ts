@@ -1,4 +1,9 @@
 export interface UserInterface{
-    id?: string,
-    name?: string
+    carnet?: number;
+    nombres?: string;
+    apellidos?: string;
+    contraseña?: string;
+    email?: string;
+
+
 }
