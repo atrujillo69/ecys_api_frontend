@@ -15,9 +15,7 @@ import { Page404Component } from './components/page404/page404.component';
 
 
 
-
 import { FormsModule } from "@angular/forms";
-
 
 //Service
 import { DataApiService } from './services/data-api.service';

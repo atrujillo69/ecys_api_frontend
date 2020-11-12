@@ -1,32 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from "src/app/services/auth.service";
-import {UserInterface} from "src/app/models/user-interface";
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: "app-register",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./register.component.css"]
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
+  carnet: number;
+  name: string;
+  lastName: string;
+  email: string;
+  password: string;
 
-  constructor(private authService: AuthService) { }
-  private user: UserInterface = {
-    carnet: 0,
-    nombres: '',
-    apellidos: '',
-    contraseña: '',
-    email: ''
-  };
-  public isError = false;
-  public msgError = '';
+  constructor() {}
 
-  ngOnInit(): void {
+  register() {
+    console.log(this.carnet);
+    console.log(this.name);
+    console.log(this.lastName);
+    console.log(this.email);
+    console.log(this.password);
   }
-  onRegister(): void{
-    this.authService.registerUser(this.user.carnet,this.user.nombres, this.user.apellidos, this.user.contraseña, this.user.email)
-    .subscribe(user =>{
-      console.log(user);
-    });
-  }
-
 }

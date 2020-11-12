@@ -16,11 +16,11 @@ export class AuthService {
 
   registerUser(carnet : number, nombres: string, apellidos : string, contraseña: string, email: string ){
     const url = "http://localhost:3000/api/user/register";
-    return this.htttp.post<UserInterface>(url,{
+    return this.htttp.post(url,{
       carnet: carnet,
-      nombres:nombres, 
-      apellidos:apellidos, 
-      contraseña: contraseña, 
+      name:nombres, 
+      lastName:apellidos, 
+      password: contraseña, 
       email:email
     },{headers: this.headers}
     )

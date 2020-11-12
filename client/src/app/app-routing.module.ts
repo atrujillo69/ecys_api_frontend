@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: '**', component: Page404Component }
 
 ];
+export const routing = RouterModule.forRoot(routes);
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
