@@ -10,22 +10,31 @@ import { UserInterface } from '../models/user-interface';
   providedIn: 'root'
 })
 export class AuthService {
-   url = "http://localhost:3000/api";
 
   constructor(private htttp: HttpClient) { }
   headers : HttpHeaders = new HttpHeaders({
     "content-type": "aplication/json"
   });
 
-  registerUser(user: UserInterface){
-    return this.htttp.post(`${this.url}/user/register`,user); 
+  registerUser(carnet : string, nombres: string, apellidos : string, password: string, correo: string ){
+   
+    const url = "http://localhost:3000/api/user/register";
+    return this.htttp.post<UserInterface>(url,{
+      carnet: carnet,
+      nombres:nombres, 
+      apellidos:apellidos, 
+      password: password, 
+      correo: correo
+    },{headers: this.headers}
+    )
+    .pipe(map(data =>data));
   }
 
-  loginUser(carnet: number, contraseña: string): Observable<any> {
+  loginUser(carnet: string, password: string): Observable<any> {
     const url = "http://localhost:3000/api/user/login?include=user";
     return this.htttp.post<UserInterface>(
       url,
-      { carnet: carnet, contraseña: contraseña },
+      { carnet: carnet, password: password },
       { headers: this.headers }
       )
       .pipe(map(data => data));
