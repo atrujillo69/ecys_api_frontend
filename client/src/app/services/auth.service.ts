@@ -3,28 +3,22 @@ import { HttpClient, HttpHeaders} from "@angular/common/http";
 import { Observable } from "rxjs/internal/Observable";
 import { map } from "rxjs/operators";
 import { isNullOrUndifined } from "util";
-import { UserInterface } from '../models/user-interface'
+import { UserInterface } from '../models/user-interface';
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+   url = "http://localhost:3000/api";
 
   constructor(private htttp: HttpClient) { }
   headers : HttpHeaders = new HttpHeaders({
     "content-type": "aplication/json"
   });
 
-  registerUser(carnet : number, nombres: string, apellidos : string, contraseña: string, email: string ){
-    const url = "http://localhost:3000/api/user/register";
-    return this.htttp.post(url,{
-      carnet: carnet,
-      name:nombres, 
-      lastName:apellidos, 
-      password: contraseña, 
-      email:email
-    },{headers: this.headers}
-    )
-    .pipe(map(data =>data));
+  registerUser(user: UserInterface){
+    return this.htttp.post(`${this.url}/user/register`,user); 
   }
 
   loginUser(carnet: number, contraseña: string): Observable<any> {

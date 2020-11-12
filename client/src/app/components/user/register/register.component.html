@@ -56,40 +56,39 @@ h1 {
     <h1>Register</h1>
     <input
     type="number"
-    [(ngModel)]="carnet"
+    [(ngModel)]="user.carnet"
     name="carnet"
     placeholder="Registro Academico"
     required="required"
   />
   <input
     type="text"
-    [(ngModel)]="name"
+    [(ngModel)]="user.nombres"
     name="name"
     placeholder="Nombres"
     required="required"
   />
   <input
     type="text"
-    [(ngModel)]="lastName"
+    [(ngModel)]="user.apellidos"
     name="lastName"
     placeholder="Apellidos"
     required="required"
   />
   <input
       type="password"
-      [(ngModel)]="password"
+      [(ngModel)]="user.password"
       name="password"
       placeholder="Password"
       required="required"
     />
     <input
       type="email"
-      [(ngModel)]="email"
+      [(ngModel)]="user.email"
       name="email"
       placeholder="Email"
       required="required"
     />
-    
     
     <button type="submit" (click)="register()">Register</button>
   </form>

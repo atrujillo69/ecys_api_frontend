@@ -9,7 +9,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { DetailsComponent } from './components/details/details.component';
 import { ListComponent } from './components/adming/list/list.component';
 import { LoginComponent } from './components/user/login/login.component';
-import { RegisterComponent } from './components/user/register/register.component';
+import { RegisterComponent } from "./components/user/register/register.component";
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { Page404Component } from './components/page404/page404.component';
 
@@ -41,8 +41,7 @@ import { HttpClientModule } from "@angular/common/http";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-
+    FormsModule
   ],
   providers: [
     DataApiService

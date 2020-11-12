@@ -1,4 +1,9 @@
 import { Component } from "@angular/core";
+import { Router } from '@angular/router';
+import { UserInterface } from "src/app/models/user-interface";
+import { AuthService } from "../../../services/auth.service";
+
+
 
 @Component({
   selector: "app-register",
@@ -6,19 +11,26 @@ import { Component } from "@angular/core";
   styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent {
-  carnet: number;
-  name: string;
-  lastName: string;
-  email: string;
-  password: string;
+  user: UserInterface = {
+  carnet: 0,
+  nombres: "",
+  apellidos: "",
+  password: "",
+  email: ""
 
-  constructor() {}
+  }
+
+  constructor(private registroUsuario: AuthService, private router : Router) {}
+  ngOnInit() {}
 
   register() {
-    console.log(this.carnet);
-    console.log(this.name);
-    console.log(this.lastName);
-    console.log(this.email);
-    console.log(this.password);
+    this.registroUsuario.registerUser(this.user).subscribe(
+      res => {
+        console.log(res)
+        this.router.navigate(["/login"]);
+      }
+    )
   }
+
+  
 }
