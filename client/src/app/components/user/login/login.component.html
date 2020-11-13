@@ -6,6 +6,7 @@
             <div class="card">
               <div class="card-body text-center">
                 <form #formLogin="ngForm" (ngSubmit)="onLogin()">
+                  <h1 class="h3 mb-3 font-weight-normal">Inicio Sesión</h1>
                 
                   <div class="form-group">
                     <input type="text" id="carnet" name="carnet" class="form-control" placeholder="Registro Academico/CUI" [(ngModel)]="user.carnet" required>
@@ -14,9 +15,9 @@
                     <input type="password" id="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password"
                       required>
                   </div>
-                  <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+                  <button type="submit" class="btn btn-lg btn-primary btn-block">Iniciar Sesion</button>
                   <div class="form-group">
-                    <a routerLink="/user/register" class="form-control login-user">Are you new ?</a>
+                    <a routerLink="/user/register" class="form-control login-user">Crear una nueva cuenta</a>
                   </div>
                 </form>
               </div>
