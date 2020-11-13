@@ -30,11 +30,11 @@ export class AuthService {
     .pipe(map(data =>data));
   }
 
-  loginUser(carnet: string, password: string): Observable<any> {
-    const url = "http://localhost:3000/api/user/login?include=user";
+  loginUser(username: string, password: string): Observable<any> {
+    const url = "http://localhost:3000/api/user/login";
     return this.htttp.post<UserInterface>(
       url,
-      { carnet: carnet, password: password },
+      { username: username, password: password },
       { headers: this.headers }
       )
       .pipe(map(data => data));

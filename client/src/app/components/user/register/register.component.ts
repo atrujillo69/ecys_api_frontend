@@ -13,7 +13,7 @@ import { AuthService } from "../../../services/auth.service";
 export class RegisterComponent implements OnInit {
   
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
     user: UserInterface = {
     carnet: "",
     nombres: "",
@@ -28,10 +28,9 @@ export class RegisterComponent implements OnInit {
     onRegister(): void{
       this.authService.registerUser(this.user.carnet,this.user.nombres, this.user.apellidos, this.user.password, this.user.correo)
       .subscribe(user =>{
-        console.log(user);
-        //this.authService.setUser(user);
-        //let token= user.carnet;
-        //this.authService.setToken(token)
+        
+        this.authService.setUser(user);
+        this.router.navigate(['local'])
       });
     }
   }
