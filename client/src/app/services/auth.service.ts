@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from "@angular/common/http";
 import { Observable } from "rxjs/internal/Observable";
 import { map } from "rxjs/operators";
-import { isNullOrUndifined } from "util";
+import { isNullOrUndefined } from "util";
 import { UserInterface } from '../models/user-interface';
 
 
@@ -13,7 +13,7 @@ export class AuthService {
 
   constructor(private htttp: HttpClient) { }
   headers : HttpHeaders = new HttpHeaders({
-    "content-type": "aplication/json"
+    "Content-Type": "application/json"
   });
 
   registerUser(carnet : string, nombres: string, apellidos : string, password: string, correo: string ){
